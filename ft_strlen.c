@@ -10,12 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
-{
-	char	*ptr;
+#include <string.h>
 
-	ptr = str;
+size_t	ft_strlen(const char *s)
+{
+	const char	*ptr;
+
+	ptr = s;
 	while (*ptr)
 		ptr++;
-	return (ptr - str);
+	return (ptr - s);
 }
+
+// #include <stdio.h>
+
+// int	main(void)
+// {
+// 	printf("len: %ld\n", ft_strlen("What do you mean!"));
+// }
