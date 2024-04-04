@@ -25,3 +25,9 @@ void	ft_bzero(void *s, size_t n)
 	}
 	s = str;
 }
+
+// int	main(void)
+// {
+// 	char *str = "My Name is Ying.";
+// 	ft_bzero(str);
+// }
