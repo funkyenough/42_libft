@@ -1,9 +1,10 @@
 #include <string.h>
 
-void	*memccpy(void *dest, const void *src, int c, size_t n)
+
+void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
-	char		*d;
-	const char	*s;
+	char *d;
+	const char *s;
 
 	d = dest;
 	s = src;
@@ -24,6 +25,7 @@ void	*memccpy(void *dest, const void *src, int c, size_t n)
 // 	const char src[] = "source";
 // 	char dest[] = "I am the destination";
 
-// 	printf("The output is: %s\n", (char *)memccpy(dest, src, 'o', n));
+// 	printf("ft_memc: %s\n", (char *)ft_memccpy(dest, src, 'o', n));
+// 	printf("memccpy: %s\n", (char *)memccpy(dest, src, 'o', n));
 // 	return (0);
 // }
