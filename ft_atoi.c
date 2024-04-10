@@ -1,12 +1,12 @@
-int ft_isspace(int c);
+int	ft_isspace(int c);
 
-int ft_atoi(const char *nptr)
+int	ft_atoi(const char *str)
 {
 	const char *ptr;
 	int n;
 	int sign;
 
-	ptr = nptr;
+	ptr = str;
 	n = 0;
 	sign = 1;
 	while (ft_isspace(*ptr))
