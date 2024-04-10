@@ -6,12 +6,11 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 20:31:14 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/31 20:41:45 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/04/10 12:10:44 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
 void	*ft_memset(void *b, int c, size_t len)
 {

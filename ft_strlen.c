@@ -6,11 +6,11 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 20:14:15 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/31 20:41:54 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/04/10 12:09:39 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {

@@ -6,11 +6,11 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 20:46:15 by yinhong           #+#    #+#             */
-/*   Updated: 2024/03/31 20:46:42 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/04/10 12:10:19 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
@@ -23,25 +23,22 @@ void	ft_bzero(void *s, size_t n)
 		str[i++] = '\0';
 }
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int	main(void)
-{
-	char str[] = "My Name is Ying.";
-	size_t i;
+// int	main(void) {
+//   char str[] = "My Name is Ying.";
+//   size_t i;
 
-	printf("Before bzero:\n");
-	for (i = 0; i < sizeof(str); i++)
-	{
-		printf("%02x ", (unsigned char)str[i]);
-	}
-	printf("\n");
-	ft_bzero(str, 10);
-	printf("After bzero:\n");
-	for (i = 0; i < sizeof(str); i++)
-	{
-		printf("%02x ", (unsigned char)str[i]);
-	}
-	printf("\n");
-	return (0);
-}
+//   printf("Before bzero:\n");
+//   for (i = 0; i < sizeof(str); i++) {
+//     printf("%02x ", (unsigned char)str[i]);
+//   }
+//   printf("\n");
+//   ft_bzero(str, 10);
+//   printf("After bzero:\n");
+//   for (i = 0; i < sizeof(str); i++) {
+//     printf("%02x ", (unsigned char)str[i]);
+//   }
+//   printf("\n");
+//   return (0);
+// }

@@ -1,9 +1,10 @@
-#include <string.h>
+#include "libft.h"
+
 
 void	*memmove(void *dest, const void *src, size_t n)
 {
-	char		*d;
-	const char	*s;
+	char *d;
+	const char *s;
 
 	d = dest;
 	s = src;

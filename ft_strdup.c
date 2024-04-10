@@ -1,16 +1,5 @@
-// #include "libft.h"
+#include "libft.h"
 #include <stdlib.h>
-#include <string.h>
-
-// size_t	ft_strlen(const char *s)
-// {
-// 	const char	*ptr;
-
-// 	ptr = s;
-// 	while (*ptr)
-// 		ptr++;
-// 	return (ptr - s);
-// }
 
 char	*ft_strdup(const char *s)
 {
