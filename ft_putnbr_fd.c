@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 16:26:55 by yinhong           #+#    #+#             */
-/*   Updated: 2024/04/15 16:45:10 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/04/16 18:02:34 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ void ft_putnbr_fd(int n, int fd)
 	write(fd, &nb, 1);
 }
 
-int	main(void)
-{
-	int fd = open("./test.txt", 1);
-	int n = 12345789;
-	ft_putnbr_fd(n, fd);
-	return 0;
-}
+// int	main(void)
+// {
+// 	int fd = open("./test.txt", 1);
+// 	int n = 12345789;
+// 	ft_putnbr_fd(n, fd);
+// 	return 0;
+// }

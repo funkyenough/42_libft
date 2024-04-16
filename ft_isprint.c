@@ -6,16 +6,13 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:14:35 by yinhong           #+#    #+#             */
-/*   Updated: 2024/04/10 12:14:35 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/04/16 18:06:01 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isprint(int c)
 {
-	char	a;
-
-	a = (char)c;
-	if ((' ' <= a && a <= '~'))
+	if ((' ' <= c && c <= '~'))
 		return (1);
 	else
 		return (0);

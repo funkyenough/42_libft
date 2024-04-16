@@ -1,4 +1,6 @@
-void ft_putstr_fd(char const *s, int fd)
+#include "libft.h"
+
+void	ft_putstr_fd(char const *s, int fd)
 {
 	while (*s)
 	{

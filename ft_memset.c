@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 20:31:14 by yinhong           #+#    #+#             */
-/*   Updated: 2024/04/10 12:15:40 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/04/16 18:34:48 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,15 @@
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	size_t	i;
-	char	*str;
+	char	*ptr;
 
-	str = (char *)malloc((len + 1) * sizeof(char));
-	if (str == NULL)
-		return (NULL);
-	i = 0;
-	while (i < len + 1)
+	ptr = (char *)b;
+	while (len)
 	{
-		str[i] = (unsigned char)c;
-		i++;
+		*ptr = (unsigned char)c;
+		ptr++;
+		len--;
 	}
-	b = str;
 	return (b);
 }
 
