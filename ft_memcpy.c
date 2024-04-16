@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:15:15 by yinhong           #+#    #+#             */
-/*   Updated: 2024/04/10 12:17:41 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/04/16 19:43:21 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	char		*d;
 	const char	*s;
 
+	// why?
+	if (!dest && !src)
+		return (NULL);
 	d = dest;
 	s = src;
 	while (n--)
