@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:16:25 by yinhong           #+#    #+#             */
-/*   Updated: 2024/04/17 12:08:10 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/04/17 12:10:10 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	int	i;
 	size_t needle_len;
+
 	if (*needle == 0)
 		return ((char *)haystack);
 	if (len <= 0)

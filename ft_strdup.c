@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:13:53 by yinhong           #+#    #+#             */
-/*   Updated: 2024/04/10 12:16:11 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/04/17 12:11:27 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strdup(const char *s)
 	char	*ptr;
 
 	len = ft_strlen(s);
-	dup = (char *)malloc(len * sizeof(char));
+	dup = (char *)malloc((len + 1) * sizeof(char));
 	if (!dup)
 		return (NULL);
 	ptr = dup;
