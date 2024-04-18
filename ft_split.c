@@ -1,17 +1,6 @@
 #include "libft.h"
 
-int	is_charset(char c, char *charset)
-{
-	while (*charset)
-	{
-		if (c == *charset)
-			return (1);
-		charset++;
-	}
-	return (0);
-}
-
-char	*ft_strndup(char *src, int n)
+char	*ft_strndup(const char *src, int n)
 {
 	char	*dest;
 	char	*ptr;
@@ -31,7 +20,7 @@ char	*ft_strndup(char *src, int n)
 	return (dest);
 }
 
-int	str_count(char *str, char *charset)
+int	str_count(const char *str, char c)
 {
 	int	i;
 	int	wordcount;
@@ -42,9 +31,9 @@ int	str_count(char *str, char *charset)
 	flag = 0;
 	while (str[i])
 	{
-		while (str[i] && is_charset(str[i], charset))
+		while (str[i] && (str[i] == c))
 			i++;
-		while (str[i] && !is_charset(str[i], charset))
+		while (str[i] && (str[i] != c))
 		{
 			flag = 1;
 			i++;
@@ -58,7 +47,7 @@ int	str_count(char *str, char *charset)
 	return (wordcount);
 }
 
-char	**ft_split(char *str, char *charset)
+char	**ft_split(char const *str, char c)
 {
 	char **result;
 	int i;
@@ -68,15 +57,15 @@ char	**ft_split(char *str, char *charset)
 	i = 0;
 	j = 0;
 	wordlength = 0;
-	result = (char **)malloc((str_count(str, charset) + 1) * sizeof(char *));
+	result = (char **)malloc((str_count(str, c) + 1) * sizeof(char *));
 	if (result == NULL)
 		return (NULL);
 	while (str[i])
 	{
-		while (is_charset(str[i], charset))
+		while (str[i] == c)
 			i++;
 		wordlength = 0;
-		while (str[i + wordlength] && !is_charset(str[i + wordlength], charset))
+		while (str[i + wordlength] && (str[i + wordlength] != c))
 			wordlength++;
 		if (wordlength)
 			result[j++] = ft_strndup(&str[i], wordlength);

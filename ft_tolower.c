@@ -6,19 +6,17 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:16:33 by yinhong           #+#    #+#             */
-/*   Updated: 2024/04/10 12:16:34 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/04/17 14:31:36 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_tolower(int c)
 {
-	char	a;
 	char	diff;
 
-	a = (char)c;
 	diff = 'a' - 'A';
-	if (('A' <= a && a <= 'Z'))
-		return ((int)(a + diff));
+	if (('A' <= c && c <= 'Z'))
+		return (c + diff);
 	else
 		return (c);
 }

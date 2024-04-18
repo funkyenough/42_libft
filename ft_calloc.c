@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 19:32:03 by yinhong           #+#    #+#             */
-/*   Updated: 2024/04/16 19:43:44 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/04/17 14:40:33 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@ void	*ft_calloc(size_t count, size_t size)
 	char *alloc;
 	size_t i;
 
+    if (count == 0 || size == 0)
+    {
+        count = 1;
+        size = 1;
+    }
 	alloc = (char *)malloc(size * count);
 	if (alloc == NULL)
 		return (NULL);

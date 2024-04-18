@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 16:26:55 by yinhong           #+#    #+#             */
-/*   Updated: 2024/04/16 18:02:34 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/04/17 14:37:42 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,10 @@ void ft_putnbr_fd(int n, int fd)
 	long nb;
 	nb = (long)n;
 	if (nb < 0)
+	{
+		write(fd, "-", 1);
 		nb *= -1;
+	}
 	if (nb >= 10)
 	ft_putnbr_fd(nb / 10, fd);
 	nb = nb % 10 + '0';
