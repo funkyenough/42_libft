@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/19 17:05:58 by yinhong           #+#    #+#             */
+/*   Updated: 2024/04/19 17:05:58 by yinhong          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBFT_H
 # define LIBFT_H
 
@@ -10,7 +22,7 @@
 
 typedef struct s_list
 {
-	void 			*content;
+	void			*content;
 	struct s_list	*next;
 }					t_list;
 int		ft_isalpha(int c);
