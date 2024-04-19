@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/19 17:01:42 by yinhong           #+#    #+#             */
+/*   Updated: 2024/04/19 17:02:23 by yinhong          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_strndup(const char *src, int n)
@@ -49,10 +61,10 @@ int	str_count(const char *str, char c)
 
 char	**ft_split(char const *str, char c)
 {
-	char **result;
-	int i;
-	int j;
-	int wordlength;
+	char	**result;
+	int		i;
+	int		j;
+	int		wordlength;
 
 	i = 0;
 	j = 0;

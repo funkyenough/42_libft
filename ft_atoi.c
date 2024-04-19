@@ -40,7 +40,7 @@ int	ft_atoi(const char *str)
 	{
 		if (sign == 1 && n > (LONG_MAX - (*str - '0')) / 10)
 			return ((int)LONG_MAX);
-		else if (sign == -1 && -n < (LONG_MIN + (*str - '0')) / 10)
+		else if (sign == -1 && -(n) < (LONG_MIN + (*str - '0')) / 10)
 			return (0);
 		n = 10 * n + (*str - '0');
 		str++;

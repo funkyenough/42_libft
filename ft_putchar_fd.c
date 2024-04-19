@@ -6,14 +6,13 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 11:21:17 by yinhong           #+#    #+#             */
-/*   Updated: 2024/04/14 11:22:40 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/04/19 17:00:06 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }
-

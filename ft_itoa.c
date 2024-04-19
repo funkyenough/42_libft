@@ -6,13 +6,13 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 15:42:09 by yinhong           #+#    #+#             */
-/*   Updated: 2024/04/18 16:35:39 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/04/19 16:54:36 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void 	helper(int *len, int *sign, long *num)
+void	helper(int *len, int *sign, long *num)
 {
 	*len = 0;
 	*sign = 1;
@@ -27,12 +27,13 @@ void 	helper(int *len, int *sign, long *num)
 		(*num) /= 10;
 	}
 }
+
 char	*ft_itoa(int n)
 {
-	char *str;
-	long num;
-	int len;
-	int sign;
+	char	*str;
+	long	num;
+	int		len;
+	int		sign;
 
 	if (n == 0)
 		return (ft_strdup("0"));
@@ -40,7 +41,7 @@ char	*ft_itoa(int n)
 	helper(&len, &sign, &num);
 	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (str == NULL)
-		return NULL;
+		return (NULL);
 	str[len] = '\0';
 	num = n;
 	num *= sign;
@@ -51,12 +52,12 @@ char	*ft_itoa(int n)
 	}
 	if (sign == -1)
 		str[0] = '-';
-	return str;
+	return (str);
 }
 
 // int	main(void)
 // {
 // 	int i = -2147483648;
 // 	printf("ft_itoa: %s\n", ft_itoa(i));
-// 	return 0;
+// 	return (0);
 // }

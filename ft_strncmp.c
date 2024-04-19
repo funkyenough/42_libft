@@ -30,7 +30,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 // int	main(void)
 // {
 // 	char s1[] = "Hello, World!";
-// 	char s2[] = "Hello, World";
+// 	char s2[] = "";
 // 	int n = 13;
 
 // 	printf("strcmp: %d\n", strncmp(s1, s2, n));

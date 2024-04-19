@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char	*str;
 	int		i;
@@ -20,7 +20,7 @@ char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	i = 0;
 	str = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (str == NULL)
-		return NULL;
+		return (NULL);
 	while (s[i])
 	{
 		str[i] = (*f)(i, s[i]);
@@ -30,18 +30,18 @@ char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	return (str);
 }
 
-char	to_zero(unsigned int u, char c)
-{
-	c = '0' + u;
-	return (c);
-}
+// char	to_zero(unsigned int u, char c)
+// {
+// 	c = '0' + u;
+// 	return (c);
+// }
 
-int	main(void)
-{
-	char str[] = "Hello, World!";
-	char *ptr;
-	printf("Before Address: %p\nBefore String: %s\n", str, str);
-	ptr = ft_strmapi(str, &to_zero);
-	printf("After  Address: %p\nAfter  String: %s\n", ptr, ptr);
-	return (0);
-}
+// int	main(void)
+// {
+// 	char str[] = "Hello, World!";
+// 	char *ptr;
+// 	printf("Before Address: %p\nBefore String: %s\n", str, str);
+// 	ptr = ft_strmapi(str, &to_zero);
+// 	printf("After  Address: %p\nAfter  String: %s\n", ptr, ptr);
+// 	return (0);
+// }

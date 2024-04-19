@@ -1,12 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/19 16:53:55 by yinhong           #+#    #+#             */
+/*   Updated: 2024/04/19 16:59:39 by yinhong          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-t_list *ft_lstnew(void *content)
+t_list	*ft_lstnew(void *content)
 {
-	t_list *node;
+	t_list	*node;
+
 	node = (t_list *)malloc(sizeof(t_list *));
 	if (node == NULL)
-		return NULL;
+		return (NULL);
 	node->content = content;
 	node->next = NULL;
-	return node;
+	return (node);
 }
