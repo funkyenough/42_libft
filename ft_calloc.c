@@ -17,11 +17,13 @@ void	*ft_calloc(size_t count, size_t size)
 	char *alloc;
 	size_t i;
 
-    if (count == 0 || size == 0)
-    {
-        count = 1;
-        size = 1;
-    }
+	if (count == 0 || size == 0)
+	{
+		count = 1;
+		size = 1;
+	}
+	if (size > SIZE_MAX / count)
+		return (NULL);
 	alloc = (char *)malloc(size * count);
 	if (alloc == NULL)
 		return (NULL);

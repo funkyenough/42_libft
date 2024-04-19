@@ -12,30 +12,39 @@
 
 #include "libft.h"
 
-
-char * ft_strtrim(char const *s)
+int	ft_isset(char c, char const *set)
 {
-	char *str;
-	char *ptr;
-	int start;
-	int end;
+	while (*set)
+	{
+		if (c == *set)
+			return (1);
+		set++;
+	}
+	return (0);
+}
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	char	*str;
+	char	*ptr;
+	int		start;
+	int		end;
 
 	start = 0;
-	end = ft_strlen(s) - 1;
-	while (s[start] == ' ' || s[start] == '\n' || s[start] == '\t')
+	end = ft_strlen(s1) - 1;
+	while (ft_isset(s1[start], set))
 		start++;
-	while (s[end] == ' ' || s[end] == '\n' || s[end] == '\t')
+	while (ft_isset(s1[end], set))
 		end--;
-	if (start > end) // If the string is entirely whitespace
-		return ft_strdup(""); // Return an empty string
+	if (start > end)
+		return (ft_strdup(""));
 	str = (char *)malloc(((end + 1) - start + 1) * sizeof(char));
 	if (str == NULL)
-		return NULL;
+		return (NULL);
 	ptr = str;
 	while (start <= end)
-		*ptr++ = s[start++];
+		*ptr++ = s1[start++];
 	*ptr = '\0';
-	return str;
+	return (str);
 }
 
 // int main(void)
@@ -43,5 +52,5 @@ char * ft_strtrim(char const *s)
 // 	char const *s = "  \t \t \n   \n\n\n\t";
 // 	printf("ft_strtrim: %s\n", ft_strtrim(s));
 
-// 	return 0;
+// 	return (0);
 // }
