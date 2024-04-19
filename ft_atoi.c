@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:14:03 by yinhong           #+#    #+#             */
-/*   Updated: 2024/04/16 19:22:55 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/04/18 17:24:14 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,31 +23,27 @@ int	ft_isspace(int c)
 
 int	ft_atoi(const char *str)
 {
-	const char	*ptr;
-	int			n;
-	int			sign;
+	long long n;
+	int sign;
 
-	ptr = str;
 	n = 0;
 	sign = 1;
-	while (ft_isspace(*ptr))
-		ptr++;
-	if (*ptr == '+' || *ptr == '-')
+	while (ft_isspace(*str))
+		str++;
+	if (*str == '+' || *str == '-')
 	{
-		if (*ptr == '-')
+		if (*str == '-')
 			sign *= -1;
-		ptr++;
+		str++;
 	}
-	while ('0' <= *ptr && *ptr <= '9')
+	while ('0' <= *str && *str <= '9')
 	{
-		n = 10 * n + (*ptr - '0');
-		ptr++;
+		if (sign == 1 && n > (LONG_MAX - (*str - '0')) / 10)
+			return ((int)LONG_MAX);
+		else if (sign == -1 && n < (LONG_MIN + (*str - '0')) / 10)
+			return ((int)LONG_MIN);
+		n = 10 * n + (*str - '0');
+		str++;
 	}
 	return (sign * n);
 }
-
-// int	main(void)
-// {
-// 	printf("ft_atoi: %d\n", ft_atoi("-123456"));
-// 	return (0);
-// }
