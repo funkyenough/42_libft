@@ -23,8 +23,8 @@ int	ft_isspace(int c)
 
 int	ft_atoi(const char *str)
 {
-	long long n;
-	int sign;
+	long	n;
+	int		sign;
 
 	n = 0;
 	sign = 1;
@@ -40,10 +40,17 @@ int	ft_atoi(const char *str)
 	{
 		if (sign == 1 && n > (LONG_MAX - (*str - '0')) / 10)
 			return ((int)LONG_MAX);
-		else if (sign == -1 && n < (LONG_MIN + (*str - '0')) / 10)
-			return ((int)LONG_MIN);
+		else if (sign == -1 && -n < (LONG_MIN + (*str - '0')) / 10)
+			return (0);
 		n = 10 * n + (*str - '0');
 		str++;
 	}
-	return (sign * n);
+	return ((int)sign * n);
 }
+
+// int	main(void)
+// {
+// 	char str[] = "-9223372036854775809";
+// 	printf("ft_at: %d\n", ft_atoi(str));
+// 	printf("atoi: %d\n", atoi(str));
+// }
