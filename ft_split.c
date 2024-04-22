@@ -6,13 +6,13 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 17:01:42 by yinhong           #+#    #+#             */
-/*   Updated: 2024/04/19 17:02:23 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/04/22 11:02:52 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strndup(const char *src, int n)
+static char	*ft_strndup(const char *src, int n)
 {
 	char	*dest;
 	char	*ptr;
@@ -32,7 +32,7 @@ char	*ft_strndup(const char *src, int n)
 	return (dest);
 }
 
-int	str_count(const char *str, char c)
+static int	str_count(const char *str, char c)
 {
 	int	i;
 	int	wordcount;

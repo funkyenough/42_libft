@@ -6,13 +6,13 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 13:28:11 by yinhong           #+#    #+#             */
-/*   Updated: 2024/04/19 17:03:18 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/04/22 11:04:06 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isset(char c, char const *set)
+static int	ft_isset(char c, char const *set)
 {
 	while (*set)
 	{

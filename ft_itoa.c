@@ -6,13 +6,13 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 15:42:09 by yinhong           #+#    #+#             */
-/*   Updated: 2024/04/19 16:54:36 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/04/22 11:03:15 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	helper(int *len, int *sign, long *num)
+static void	helper(int *len, int *sign, long *num)
 {
 	*len = 0;
 	*sign = 1;
