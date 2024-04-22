@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 12:29:12 by yinhong           #+#    #+#             */
-/*   Updated: 2024/04/19 17:55:38 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/04/22 12:54:12 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*str;
 	char	*ptr;
 
-	if (start >= ft_strlen(s) || s == NULL)
+	if (s == NULL)
+		return (NULL);
+	if (start >= ft_strlen(s))
 		return (ft_strdup(""));
 	if (ft_strlen(s + start) < len)
 		len = ft_strlen(s + start);

@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 17:01:42 by yinhong           #+#    #+#             */
-/*   Updated: 2024/04/22 11:02:52 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/04/22 12:57:34 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,8 @@ char	**ft_split(char const *str, char c)
 
 	i = 0;
 	j = 0;
-	wordlength = 0;
+	if (!str)
+		return (NULL);
 	result = (char **)malloc((str_count(str, c) + 1) * sizeof(char *));
 	if (result == NULL)
 		return (NULL);
