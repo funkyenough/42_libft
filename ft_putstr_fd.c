@@ -6,13 +6,13 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 17:01:35 by yinhong           #+#    #+#             */
-/*   Updated: 2024/04/19 17:01:37 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/04/22 11:23:25 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char const *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
 	while (*s)
 	{
