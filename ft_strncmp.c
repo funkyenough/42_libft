@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:16:22 by yinhong           #+#    #+#             */
-/*   Updated: 2024/04/10 12:16:22 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/04/22 10:44:54 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
+	if (!s1 || !s2)
+		return (0);
 	while ((*s1 || *s2) && n)
 	{
 		if (*s1 != *s2)
@@ -29,10 +31,12 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 
 // int	main(void)
 // {
-// 	char s1[] = "Hello, World!";
-// 	char s2[] = "";
-// 	int n = 13;
+// 	// char s1[] = "Hello, World!";
+// 	// char s2[] = "";
+// 	// int n = 13;
 
-// 	printf("strcmp: %d\n", strncmp(s1, s2, n));
-// 	printf("ft_str: %d\n", ft_strncmp(s1, s2, n));
+// 	// printf("strcmp: %d\n", strncmp(s1, s2, n));
+// 	// printf("ft_str: %d\n", ft_strncmp(s1, s2, n));
+// 	printf("strcmp: %d\n", strncmp(NULL, "Hello", 0));
+// 	printf("ft_str: %d\n", ft_strncmp(NULL, "Hello", 0));
 // }
