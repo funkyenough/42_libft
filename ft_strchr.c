@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:15:59 by yinhong           #+#    #+#             */
-/*   Updated: 2024/04/10 12:15:59 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/04/23 18:38:01 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)s);
 		s++;
 	}
-	if (c == 0)
+	if ((char)c == '\0')
 		return ((char *)s);
 	return (NULL);
 }

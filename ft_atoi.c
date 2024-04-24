@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:14:03 by yinhong           #+#    #+#             */
-/*   Updated: 2024/04/22 11:03:03 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/04/24 18:06:47 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,8 @@
 
 static int	ft_isspace(int c)
 {
-	if (c == ' ' || c == '\f' || c == '\n' || c == '\r' || c == '\t'
-		|| c == '\v')
-		return (1);
-	else
-		return (0);
+	return (c == ' ' || c == '\f' || c == '\n' || c == '\r' || c == '\t'
+		|| c == '\v');
 }
 
 int	ft_atoi(const char *str)
@@ -38,10 +35,12 @@ int	ft_atoi(const char *str)
 	}
 	while ('0' <= *str && *str <= '9')
 	{
-		if (sign == 1 && n > (LONG_MAX - (*str - '0')) / 10)
+		if (sign == 1 && (n > (LONG_MAX / 10) || (n == (LONG_MAX / 10)
+					&& *str >= '7')))
 			return ((int)LONG_MAX);
-		else if (sign == -1 && -(n) < (LONG_MIN + (*str - '0')) / 10)
-			return (0);
+		else if (sign == -1 && (n > (LONG_MAX / 10) || (n == (LONG_MAX / 10)
+					&& *str >= '8')))
+			return ((int)LONG_MIN);
 		n = 10 * n + (*str - '0');
 		str++;
 	}

@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 20:46:15 by yinhong           #+#    #+#             */
-/*   Updated: 2024/04/10 12:10:19 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/04/24 12:11:55 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,7 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t	i;
-	char	*str;
-
-	str = (char *)s;
-	i = 0;
-	while (i < n)
-		str[i++] = '\0';
+	ft_memset(s, 0, n);
 }
 
 // #include <stdio.h>
