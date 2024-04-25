@@ -41,7 +41,7 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 // int	main(void)
 // {
 // 	char str[] = "Hello, world!";
-// 	ft_memmove(str + 6, str + 7, 11); // Move "world!" one position to the left
+// 	ft_memmove(str + 6, str + 7, 6); // Move "world!" one position to the left
 // 	printf("The output is: %s\n", str);
 // 	return (0);
 // }
