@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 11:28:30 by yinhong           #+#    #+#             */
-/*   Updated: 2024/04/22 13:15:14 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/04/25 13:25:07 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,13 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*next_node;
 
-	if (lst == NULL)
-		return ;
-	next_node = *lst;
-	if (*lst != NULL)
+	if (lst)
 	{
-		while (next_node != NULL)
+		while (*lst)
 		{
-			if (del)
-				del(next_node->content);
-			*lst = next_node->next;
-			free(next_node);
-			next_node = *lst;
+			next_node = (*lst)->next;
+			ft_lstdelone(*lst, del);
+			*lst = next_node;
 		}
 	}
 }
