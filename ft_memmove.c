@@ -2,24 +2,20 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+
-	+:+     */
-/*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+
-	+#+        */
-/*                                                +#+#+#+#+#+
-	+#+           */
-/*   Created: 2024/04/19 17:00:24 by yinhong           #+#    #+#             */
-/*   Updated: 2024/04/19 17:00:24 by yinhong          ###   ########.fr       */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/25 09:58:45 by yinhong           #+#    #+#             */
+/*   Updated: 2024/04/25 09:58:45 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
 void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	char *d;
-	const char *s;
+	char		*d;
+	const char	*s;
 
 	if (!dst && !src)
 		return (NULL);
