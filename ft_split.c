@@ -6,11 +6,22 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 17:01:42 by yinhong           #+#    #+#             */
-/*   Updated: 2024/04/23 19:31:41 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/04/25 11:24:25 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static void	*free_split(char **split, int j)
+{
+	while (j >= 0)
+	{
+		free(split[j]);
+		j--;
+	}
+	free(split);
+	return (NULL);
+}
 
 static char	*ft_strndup(const char *src, int n)
 {
@@ -32,47 +43,31 @@ static char	*ft_strndup(const char *src, int n)
 	return (dest);
 }
 
-static int	str_count(const char *str, char c)
+static int	str_count(const char *s, char c)
 {
-	int	i;
 	int	wordcount;
-	int	flag;
 
-	i = 0;
 	wordcount = 0;
-	flag = 0;
-	while (str[i])
+	while (*s)
 	{
-		while (str[i] && (str[i] == c))
-			i++;
-		while (str[i] && (str[i] != c))
-		{
-			flag = 1;
-			i++;
-		}
-		if (flag)
-		{
+		while (*s == c)
+			s++;
+		if (*s)
 			wordcount++;
-			flag = 0;
-		}
+		while (*s && (*s != c))
+			s++;
 	}
 	return (wordcount);
 }
 
-char	**ft_split(char const *str, char c)
+char	**split(char const *str, char c, char **result)
 {
-	char	**result;
-	int		i;
-	int		j;
-	int		wordlength;
+	int	i;
+	int	j;
+	int	wordlength;
 
 	i = 0;
 	j = 0;
-	if (!str)
-		return (NULL);
-	result = (char **)malloc((str_count(str, c) + 1) * sizeof(char *));
-	if (result == NULL)
-		return (NULL);
 	while (str[i])
 	{
 		while (str[i] == c)
@@ -81,9 +76,27 @@ char	**ft_split(char const *str, char c)
 		while (str[i + wordlength] && (str[i + wordlength] != c))
 			wordlength++;
 		if (wordlength)
-			result[j++] = ft_strndup(&str[i], wordlength);
-		i += wordlength;
+		{
+			result[j] = ft_strndup(&str[i], wordlength);
+			if (result[j] == NULL)
+				return (free_split(result, j));
+			j++;
+			i += wordlength;
+		}
 	}
 	result[j] = NULL;
+	return (result);
+}
+
+char	**ft_split(char const *str, char c)
+{
+	char	**result;
+
+	if (!str)
+		return (NULL);
+	result = (char **)malloc((str_count(str, c) + 1) * sizeof(char *));
+	if (!result)
+		return (NULL);
+	result = split(str, c, result);
 	return (result);
 }

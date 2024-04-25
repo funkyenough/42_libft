@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 13:28:11 by yinhong           #+#    #+#             */
-/*   Updated: 2024/04/22 13:24:05 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/04/25 12:45:48 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		start;
 	int		end;
 
-	if (!s1)
+	if (!s1 || !set)
 		return (ft_strdup(""));
 	start = 0;
 	end = ft_strlen(s1) - 1;
