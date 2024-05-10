@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 17:01:42 by yinhong           #+#    #+#             */
-/*   Updated: 2024/04/25 11:24:25 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/05/10 16:46:41 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ static int	str_count(const char *s, char c)
 	return (wordcount);
 }
 
-char	**split(char const *str, char c, char **result)
+static char	**split(char const *str, char c, char **result)
 {
 	int	i;
 	int	j;
@@ -100,3 +100,18 @@ char	**ft_split(char const *str, char c)
 	result = split(str, c, result);
 	return (result);
 }
+
+// #include <stdio.h>
+
+// int	main(void)
+// {
+// 	char str[] = "Hello, World, My, Name, Is, Ying.";
+// 	char **strs = ft_split(str, ' ');
+
+// 	while (*strs)
+// 	{
+// 		printf("%s\n", *strs);
+// 		strs++;
+// 	}
+// 	return (0);
+// }
