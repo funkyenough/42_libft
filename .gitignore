@@ -1,0 +1,4 @@
+*.out
+*.out.dSYM
+/libftTester
+/libft-tester-tokyo
